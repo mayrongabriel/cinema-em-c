@@ -2,7 +2,8 @@
 
 [Contexto](#contexto)  
 [Funcionalidades](#funcionalidades)  
-[Observações](#observações) 
+[Observações](#observações)   
+[Como compilar e executar](#como-compilar-e-executar)
 
 ---
 
@@ -27,89 +28,7 @@
 4. Cancelar venda
 5. Marcar / liberar manutenção
 6. Relatório
-7. Registrar final de smm               8   mu 8imi ummmmmmmmm  8m d´~;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-mnjb nmb b b 
-]
-
-]ç kçç~jy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+7. Registrar final
 0. Sair
 ```
 
