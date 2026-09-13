@@ -6,6 +6,7 @@
 int menu(void);
 void resetarmapa (char mapa[][LUGARES]);
 void exibirmapa (char mapa[][LUGARES]);
+void venda (char mapa[][LUGARES]);
 
 int main(void) {
     char mapa[FILAS][LUGARES];
@@ -21,7 +22,7 @@ int main(void) {
 				printf("\n");
 				break;
 			case 2:
-				printf("\nEM DESENVOLVIMENTO\n\n");
+				venda(mapa);
 				break;
 			case 3:
 				printf("\nEM DESENVOLVIMENTO\n\n");
@@ -95,4 +96,51 @@ void exibirmapa (char mapa[][LUGARES]) {
     printf("\n");
     }
     printf("\nL = Livre\nX = Ocupado\nM = Manuntencao\n====================\n");
+}
+
+void venda (char mapa[][LUGARES]) {
+	char a;
+	int b, valida = 0;
+
+	exibirmapa(mapa);
+
+	printf("==== V E N D A =====\n====================\nFILEIRA [A-E]: ");
+	scanf(" %c", &a);
+
+	if (a >= 'a' && a <= 'z') {
+		a = a - 'a';
+		valida = 1;
+	} else if (a >= 'A' && a <= 'Z') {
+		a = a - 'A';
+		valida = 1;
+	}
+
+	if (valida) {
+		printf("COLUNA [1-9]: ");
+			scanf("%d", &b);
+			b--;
+
+		switch (mapa[a][b]) {
+			case 'L':
+				mapa[a][b] = 'X';
+				printf("============================\n");
+				printf("Cadeira vendida com sucesso!\n");
+				printf("============================\n\n");
+				break;
+			case 'X':
+				printf("============================\n");
+				printf("Cadeira ocupada!\n");
+				printf("============================\n\n");
+				break;
+			case 'M':
+				printf("============================\n");
+				printf("Cadeira em manuntencao!\n");
+				printf("============================\n\n");
+				break;
+		}
+	} else {
+		printf("============================\n");
+		printf("Fileira invalida!\n");
+		printf("============================\n\n");
+	}
 }
