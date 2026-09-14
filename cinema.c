@@ -7,6 +7,7 @@ int menu(void);
 void resetarmapa (char mapa[][LUGARES]);
 void exibirmapa (char mapa[][LUGARES]);
 void venda (char mapa[][LUGARES]);
+void vendarapida (char mapa[][LUGARES]);
 
 int main(void) {
     char mapa[FILAS][LUGARES];
@@ -25,7 +26,7 @@ int main(void) {
 				venda(mapa);
 				break;
 			case 3:
-				printf("\nEM DESENVOLVIMENTO\n\n");
+				vendarapida(mapa);
 				break;
 			case 4:
 				printf("\nEM DESENVOLVIMENTO\n\n");
@@ -142,5 +143,25 @@ void venda (char mapa[][LUGARES]) {
 		printf("============================\n");
 		printf("Fileira invalida!\n");
 		printf("============================\n\n");
+	}
+}
+
+void vendarapida (char mapa[][LUGARES]) {
+	int i, j, vendido = 0;
+
+	for (i = 0; i < FILAS && vendido != 1; i++) {
+		for (j = 0; j < LUGARES; j++) {
+			if (mapa[i][j] == 'L') {
+				mapa[i][j] = 'X';
+				vendido = 1;
+				break;
+			}
+		}
+	}
+
+	if (vendido) {
+		printf("\n==========================\nVENDA RAPIDA CONCLUIDA\nCADEIRA RESERVADA: [%c][%d]\n==========================\n\n", 'A' + i - 1, j + 1);
+	} else {
+		printf("\n==========================\nNENHUMA CADEIRA DISPONIVEL!\n==========================\n\n");
 	}
 }
